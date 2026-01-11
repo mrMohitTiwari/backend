@@ -1,0 +1,2 @@
+every real world websites does to things before giving the response to get request authentication and input validation
+ANs middleware
