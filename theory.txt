@@ -8,3 +8,11 @@ now if I create functions to do checkups It will be slightly clear code but we w
 We will use middleware 
 Question is how u define a middleware If validaitons are right how it sends controls to the next middleware
 So the thing is we can give a range of callback function in app.get function
+the callback function will work as a chain in the callback the callback will have three parameters req res and next.
+but We can not call res.send or res.json more then one time for a particular http request
+Some of the popular middleware is calculateRequestsMiddleware
+If we need post method's Body parameters use app.use
+If I know that the middleware needs to be called in every route then I can use use method app.use(middlewareName)
+for selfMade function we use app.use(middlewareName) not used ()
+but for express.json we use () because it itself returns a function
+ app.use(express.json())
