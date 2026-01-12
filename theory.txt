@@ -1,2 +1,10 @@
 every real world websites does to things before giving the response to get request authentication and input validation
 ANs middleware
+suppose now if i want to do kidney replacement I have to again do input validaiton and kidney replacement 
+It violates the DRY principle
+Writing this again and again for every route is not Feasible 
+to avoid DRY we use functions
+now if I create functions to do checkups It will be slightly clear code but we will face again the code repitations 
+We will use middleware 
+Question is how u define a middleware If validaitons are right how it sends controls to the next middleware
+So the thing is we can give a range of callback function in app.get function
