@@ -16,3 +16,4 @@ If I know that the middleware needs to be called in every route then I can use u
 for selfMade function we use app.use(middlewareName) not used ()
 but for express.json we use () because it itself returns a function
  app.use(express.json())
+ //Now we will learn about the input validaiton
