@@ -17,3 +17,4 @@ for selfMade function we use app.use(middlewareName) not used ()
 but for express.json we use () because it itself returns a function
  app.use(express.json())
  //Now we will learn about the input validaiton
+ you should not expose any backend logic to user when there is an error in the backend So we have globalCathes which is another middleware which is called at the end of all the routers
