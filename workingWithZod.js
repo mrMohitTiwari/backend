@@ -6,6 +6,13 @@ const schema = zod.array(zod.number())
 app.get('/fine',(req,res)=>{
     res.send("running");
 })
+// getting comfortable with the schema of zod 
+// const schm = zod.object({
+//     email:"string",
+//     password:"string",
+//     //adding country which necessary should be IN or US
+//     coutnry:zod.literal("IN").or(zod.literal("US")),
+// })
 app.post('/',(req,res)=>{
     const kidneys= req.body.kidneys;
     const response = schema.safeParse(kidneys)
