@@ -1,0 +1,38 @@
+const express = require("express");
+const jwt = require("jsonwebtoken");
+const app = express();
+const jwtPassword = "1234";
+// creating the user 
+app.use(express.json());
+let usersList = [
+    {
+        userName:"mohit",
+        password:"hnhnhn",
+    },
+      {
+        userName:"shubham",
+        password:"ababab",
+    }
+]
+function userExist(userName,password){
+    for(let i=0;i<usersList.length;i++) {
+            if(userName === usersList[i].userName && password === usersList[i].password) return true;
+            return false;
+    }
+
+}
+app.post("/signIn",(req,res)=>{
+    const userName= req.body.userName;
+    const password = req.body.password;
+    console.log("yahi h dikkat")
+    if(!userExist(userName,password)) {
+        res.status(403).json({
+            msg:"user does not exist please sign in"
+        })
+        return;
+    }
+    //if user exist create a token
+    let token = jwt.sign({userName:userName},jwtPassword)
+    return res.json({token});
+})
+app.listen(3000,()=>console.log("running on 3000"))
