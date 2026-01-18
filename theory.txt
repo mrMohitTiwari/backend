@@ -18,3 +18,16 @@ but for express.json we use () because it itself returns a function
  app.use(express.json())
  //Now we will learn about the input validaiton
  you should not expose any backend logic to user when there is an error in the backend So we have globalCathes which is another middleware which is called at the end of all the routers
+ //*************authentication******
+ till now anyone can send request to your backend 
+ Dumb way : Ask the user to send request with header of username and password in all subsequent request 
+ slightly better way :
+ Give the user back a token on signup and signin
+ ask the user to send back the token in alll future request
+ when the user logs out ask the user to forget token(or revoke it from the backend)
+ ///////////week3.2
+ Till now we were sending request through postman or out browser
+ When you hit a button in a website it sends a request to the server it is done by  the function fetch which is given by browser api
+ FETCH.
+ you can take your authentication token and go jwt.io
+ Working with jwt tokens
