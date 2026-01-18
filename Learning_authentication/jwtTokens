@@ -24,7 +24,6 @@ function userExist(userName,password){
 app.post("/signIn",(req,res)=>{
     const userName= req.body.userName;
     const password = req.body.password;
-    console.log("yahi h dikkat")
     if(!userExist(userName,password)) {
         res.status(403).json({
             msg:"user does not exist please sign in"
@@ -34,5 +33,29 @@ app.post("/signIn",(req,res)=>{
     //if user exist create a token
     let token = jwt.sign({userName:userName},jwtPassword)
     return res.json({token});
+});
+// now working with the toeken based session
+app.get("/user",(req,res)=>{
+    const token =req.headers.authorization;
+    try {
+        const decoded = jwt.verify(token,jwtPassword)
+        const userName =decoded.userName;
+        // returns a list of users other then this
+    }
+    catch(err){
+        res.status(403).json(
+            {
+                msg:"INAVALID TOKEN"
+            }
+        )
+        return;
+    }
+    res.json({
+        user:userList
+        // users:usersList.filter((val)=>{
+        //     if(val.userName===userName) return false;
+        //     return true;
+        // })
+    })
 })
 app.listen(3000,()=>console.log("running on 3000"))
