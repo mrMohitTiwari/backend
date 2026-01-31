@@ -31,3 +31,11 @@ but for express.json we use () because it itself returns a function
  FETCH.
  you can take your authentication token and go jwt.io
  Working with jwt tokens
+
+ //Databases
+ with momgoose ->noSql Database
+ 4 types :
+ Vector DB ->used for machine learning
+ Graph ->some niche usecase
+ SQL ->Full stack website
+ NOSql -> Simpler to understand //you can dump whatever data u want
