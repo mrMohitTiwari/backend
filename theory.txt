@@ -1,4 +1,4 @@
-every real world websites does to things before giving the response to get request authentication and input validation
+every real world websites does two things before giving the response to get request authentication and input validation
 ANs middleware
 suppose now if i want to do kidney replacement I have to again do input validaiton and kidney replacement 
 It violates the DRY principle
@@ -12,7 +12,8 @@ the callback function will work as a chain in the callback the callback will hav
 but We can not call res.send or res.json more then one time for a particular http request
 Some of the popular middleware is calculateRequestsMiddleware
 If we need post method's Body parameters use app.use
-If I know that the middleware needs to be called in every route then I can use use method app.use(middlewareName)
+If I know that the middleware needs to be called in every route then I can use use method
+ app.use(middlewareName)
 for selfMade function we use app.use(middlewareName) not used ()
 but for express.json we use () because it itself returns a function
  app.use(express.json())
